@@ -1,17 +1,34 @@
+// const fs = require('fs');
 
-// function sum(n) {
-//     return n * (n+1);
+// function print(error, data) {
+//     console.log(data);
 // }
 
-// const ans = sum(5);
-// console.log(ans);
+// fs.readFile("a.txt", "utf-8", print)   // asynchronous
 
-const fs = require('fs');
+// fs.readFile("b.txt", "utf-8", print);   // asynchronous
 
-fs.readFile("a.txt", "utf-8", function(error, contents) {
-    console.log(contents)
-});   // asynchronous
-// console.log(contents);
+// setTimeout(() => {
+//     console.log("Timeout done!");
+// }, 0);
 
-const data = fs.readFileSync("b.txt", "utf-8");   // synchronous
-console.log(data);
+// console.log("Done!");
+
+
+
+function timeout() {
+    console.log("Button clicked!");
+}
+
+console.log("Hii there!");
+
+setTimeout(timeout, 2000);
+
+console.log("Bye there!");
+
+let a = 0;
+for(let i=0; i<1000000000; i++) {
+    a = a + 1;
+}
+
+console.log("Expensive opration done!");
