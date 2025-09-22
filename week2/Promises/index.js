@@ -1,14 +1,21 @@
 // Promise that resolves after a delay
 
-function setTimeoutPromise(ms) {    // miliseconds
-    return new Promise((resolve) => { setTimeout(resolve, ms)})
+function waitFor3S(resolve) {    // resolve == main
+    setTimeout(resolve, 3000);
 }
 
-function callback() {
-    console.log("Printed after 3 seconds");
+function setTimeoutPromise() {    // miliseconds
+    return new Promise(waitFor3S);
 }
 
-// setTimeoutPromise(3000).then(callback);
+function main() {
+    console.log("3 seconds have passed");
+}
 
-let p = setTimeoutPromise(3000);
-console.log(p); // Promise { <pending> }
+setTimeoutPromise(3000).then(main);
+
+
+
+
+// let p = setTimeoutPromise(3000);
+// console.log(p); // Promise { <pending> }
